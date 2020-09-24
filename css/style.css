@@ -1,0 +1,102 @@
+* {
+    border: 1px solid rgb(224, 224, 224);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-bar {
+    /* background: green; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.nav-bar ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.nav-bar ul li{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul li img{
+    padding: 0 0 0 10px;
+}
+
+.nav-bar ul li a {
+    color: #1A936F;
+    font-size: 18px;
+    letter-spacing: .05em;
+    text-decoration: none;
+}
+
+.welcome-banner {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* background: url('https://i.vimeocdn.com/video/955459854.webp'); */
+    background: url('/img/kiwi-watercolor-3.png') center;
+    background-size: contain;
+}
+
+/* .welcome-banner img {
+    position: absolute  ;
+    height: 200px;
+    width: 100%;
+    opacity: .8;
+} */
+
+.welcome-banner p {
+    color: #2F2570;
+    text-align: center;
+    width: 500px;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.welcome-banner a {
+    display: flex;
+    background: #2F2570;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    width: 100px;
+    align-items: center;
+    transform: translateY(20px);
+    justify-content: center;
+    border-radius: 50px;
+    width: 164px;
+    height: 50px;
+    transition: all .2s ease 0s;
+}
+
+.welcome-banner a:hover {
+    background: white;
+    color: #2F2570;
+    font-weight: 500;
+}
+
+.bottle-center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    content: "";
+    background: url('/img/kiwi-drawing.jpg') no-repeat;
+    background-size: 500px;
+    background-position: 50% 50%;
+    height: 600px;
+}
+#spruce-bottle {
+    height: 550px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
