@@ -1,21 +1,40 @@
 * {
-    border: 1px solid rgb(224, 224, 224);
+    /* border: 1px solid rgb(224, 224, 224); */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
+:root {
+    --green-text-color-dark: #34721E;
+    --green-text-color-light: #449228;
+    --blue-text-color-dark: #2F2570;
+    --gray-box-shadow-light: #666;
+    --gray-box-shadow-dark: rgb(37, 37, 37);
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.nav-container {
+    position: fixed;
+    display: flex;
+    width: 100%;
+}
 .nav-bar {
-    /* background: green; */
+    position: relative;
+    width: 100%;    
     height: 80px;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 0 30px;
 }
 
 .nav-bar ul {
-    width: 100%;
+    width: 50%;
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -27,27 +46,46 @@
 }
 
 .nav-bar ul li img{
+    height: 20px;
     padding: 0 0 0 10px;
 }
 
 .nav-bar ul li a {
-    color: #1A936F;
-    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    /* color: #1A936F; */
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 300;
     letter-spacing: .05em;
+    z-index: 2;
     text-decoration: none;
 }
+.nav-bar ul li a:hover {
+    color: white;
+}
 
+.welcome-wrap {
+    background: url('/img/forest-dark.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
 .welcome-banner {
-    height: 400px;
     display: flex;
+    height: 100%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    /* background: url('https://i.vimeocdn.com/video/955459854.webp'); */
-    background: url('/img/kiwi-watercolor-3.png') center;
-    background-size: contain;
+    /* background: rgba(0, 0, 0, 0.9); */
+    /* background: url('/img/kiwi-watercolor-3.png') center; */
+    
 }
-
+.welcome-banner-words {
+    position: relative;
+    margin-top: 150px;
+}
 /* .welcome-banner img {
     position: absolute  ;
     height: 200px;
@@ -56,7 +94,7 @@
 } */
 
 .welcome-banner p {
-    color: #2F2570;
+    color: var(--green-text-color-light);
     text-align: center;
     width: 500px;
     font-size: 60px;
@@ -65,7 +103,7 @@
 
 .welcome-banner a {
     display: flex;
-    background: #2F2570;
+    background: var(--green-text-color-light);
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -81,11 +119,11 @@
 
 .welcome-banner a:hover {
     background: white;
-    color: #2F2570;
+    color: var(--green-text-color-light);
     font-weight: 500;
 }
 
-.bottle-center {
+.intro-wrap {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -94,9 +132,27 @@
     background: url('/img/kiwi-drawing.jpg') no-repeat;
     background-size: 500px;
     background-position: 50% 50%;
-    height: 600px;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.spruce-bottle-wrap {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 #spruce-bottle {
-    height: 550px;
-    filter: drop-shadow(7px 7px 7px #666666);
+    height: 500px;
+    filter: drop-shadow(7px 7px 17px rgba(0, 0, 0, 0.863));
+    margin: 0 auto;
+    /* transform: translate(-50%); */
+}
+.ingredient-wrap {
+    background: black;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
