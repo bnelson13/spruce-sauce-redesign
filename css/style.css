@@ -1,158 +1,604 @@
+/* Root */
 * {
-    /* border: 1px solid rgb(224, 224, 224); */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  /* border: 1px solid rgb(224, 224, 224); */
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  overscroll-behavior: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 :root {
-    --green-text-color-dark: #34721E;
-    --green-text-color-light: #449228;
-    --blue-text-color-dark: #2F2570;
-    --gray-box-shadow-light: #666;
-    --gray-box-shadow-dark: rgb(37, 37, 37);
+  --green-text-color-dark: #34721e;
+  --green-text-color-light: #449228;
+  --blue-text-color-dark: #2f2570;
+  --gray-box-shadow-light: #666;
+  --gray-box-shadow-dark: rgb(37, 37, 37);
 }
 
 html {
-    scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
+/* Section - Navigation Bar */
 .nav-container {
-    position: fixed;
-    display: flex;
-    width: 100%;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  z-index: 1;
 }
 .nav-bar {
-    position: relative;
-    width: 100%;    
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 30px;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
 }
 
 .nav-bar ul {
-    width: 50%;
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
+  width: 100%;
+  padding: 0 15%;
+  display: flex;
+  list-style: none;
+  position: relative;
+  justify-content: space-between;
 }
 
-.nav-bar ul li{
-    display: flex;
-    align-items: center;
-}
-
-.nav-bar ul li img{
-    height: 20px;
-    padding: 0 0 0 10px;
+.nav-bar ul li {
+  display: flex;
+  align-items: center;
 }
 
 .nav-bar ul li a {
-    color: rgba(255, 255, 255, 0.7);
-    /* color: #1A936F; */
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: .05em;
-    z-index: 2;
-    text-decoration: none;
-}
-.nav-bar ul li a:hover {
-    color: white;
+  transition: all 0.5s ease;
 }
 
+.nav-bar-link {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.nbl-light {
+  color: rgba(255, 255, 255, 0.7);
+}
+.nbl-light:hover {
+  color: white;
+}
+.nbl-dark {
+  color: rgba(0, 0, 0, 0.7);
+}
+.nbl-dark:hover {
+  color: black;
+}
+
+.nav-bar-last-link {
+  position: absolute;
+  right: 0px;
+}
+
+#nav-bar-shopping-logo {
+  height: 30px;
+}
+
+.nav-link-dark-border {
+  border-bottom: 1px solid black;
+  color: black;
+  pointer-events: none;
+}
+
+.nav-link-white-border {
+  border-bottom: 1px solid white;
+  color: white;
+  pointer-events: none;
+}
+
+/* Section - Welcome Section */
 .welcome-wrap {
-    background: url('/img/forest-dark.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-}
-.welcome-banner {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    /* background: rgba(0, 0, 0, 0.9); */
-    /* background: url('/img/kiwi-watercolor-3.png') center; */
-    
-}
-.welcome-banner-words {
-    position: relative;
-    margin-top: 150px;
-}
-/* .welcome-banner img {
-    position: absolute  ;
-    height: 200px;
-    width: 100%;
-    opacity: .8;
-} */
-
-.welcome-banner p {
-    color: var(--green-text-color-light);
-    text-align: center;
-    width: 500px;
-    font-size: 60px;
-    font-weight: 500;
+  background: url('/img/forest-dark.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s ease;
 }
 
-.welcome-banner a {
-    display: flex;
-    background: var(--green-text-color-light);
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    width: 100px;
-    align-items: center;
-    transform: translateY(20px);
-    justify-content: center;
-    border-radius: 50px;
-    width: 164px;
-    height: 50px;
-    transition: all .2s ease 0s;
+.welcome-words {
+  position: absolute;
+  font-size: 16vw;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.2);
 }
 
-.welcome-banner a:hover {
-    background: white;
-    color: var(--green-text-color-light);
-    font-weight: 500;
+.welcome-words p span {
+  margin: 0 70px 0 60px;
 }
 
-.intro-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    content: "";
-    background: url('/img/kiwi-drawing.jpg') no-repeat;
-    background-size: 500px;
-    background-position: 50% 50%;
-    height: 100vh;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-}
+/* Float - Spruce Bottle */
 .spruce-bottle-wrap {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -112px;
+  z-index: 1;
 }
 #spruce-bottle {
-    height: 500px;
-    filter: drop-shadow(7px 7px 17px rgba(0, 0, 0, 0.863));
-    margin: 0 auto;
-    /* transform: translate(-50%); */
+  height: 500px;
+  filter: drop-shadow(7px 7px 17px rgba(0, 0, 0, 0.863));
+  transition: all 0.5s ease;
+}
+
+/* Section - About */
+.about-wrap {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  content: '';
+  background-size: 20px;
+  background-position: 50% 50%;
+  height: 100vh;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  z-index: -2;
+}
+
+.about-section-hr {
+  width: 0px;
+  /* width: 610px; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 1s ease-out;
+}
+
+.about-section-trio {
+  display: flex;
+  /* margin: 50% auto;
+  transform: translateY(-50%); */
+}
+
+.about-section-trio-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-subheader {
+  position: absolute;
+  transform: translateY(-160px);
+  font-weight: 300;
+  font-size: 30px;
+  color: #127218;
+  opacity: 0;
+}
+.about-section-trio-side-p {
+  text-align: center;
+  padding: 20px;
+  max-width: 270px;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  font-size: 20px;
+  z-index: 4;
+  background-color: white;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  color: #127218;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.about-section-trio-middle {
+  display: flex;
+  align-items: center;
+  /* position: relative; */
+  justify-content: center;
+  flex: 1 0;
+  width: 700px;
+}
+
+#kiwi-drawing {
+  transition: height 1s ease;
+}
+
+.about-section-tagline {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 300;
+  max-width: 600px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  font-style: italic;
+}
+
+/* Section - Ingredients */
+.ingredient-wrap * {
+  box-sizing: border-box;
 }
 .ingredient-wrap {
-    background: black;
-    height: 100vh;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+  background: rgb(32, 32, 32);
+  height: 100vh;
+  position: relative;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.svg-section {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ingredient-left {
+  height: 100vh;
+  background: url('/img/forest-dark.png');
+  display: grid;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ingredient-right-box {
+  display: none;
+  height: 250px;
+  padding: 5px;
+  margin-left: 200px;
+  width: 250px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.ingredient-right-background {
+  height: 100%;
+  background: url('/img/closeups/jalapeno-closeup.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* transition: all 0.5s ease; */
+  opacity: 100;
+}
+
+.ingredient-right-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 237px;
+  margin: 6px;
+  width: 237px;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ingredient-right-text-title {
+  margin-bottom: 10px;
+}
+
+.ingredient-right {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.ingredient-left-list {
+  list-style: none;
+  line-height: 2;
+  position: relative;
+  width: 350px;
+  margin-right: 130px;
+  margin-left: auto;
+}
+
+.ingredient-icon {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  font-size: 17px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  animation: opacity 2s ease transform 1s ease;
+  transform: translateY(150px);
+}
+
+.ingredient-icon-seen {
+  opacity: 1;
+  animation: opacity 2s ease transform 1s ease;
+  transform: translateY(0px);
+}
+
+.ingredient-line {
+  display: none;
+}
+
+.ingredient-icon img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.ingredient-left-list .icon-a {
+  margin-left: 125px;
+}
+
+.ingredient-left-list .icon-b {
+  margin-left: 101px;
+}
+
+.ingredient-left-list .icon-c {
+  margin-left: 81px;
+}
+
+.ingredient-left-list .icon-d {
+  margin-left: 71px;
+}
+
+.ingredient-left-list .icon-e {
+  margin-left: 64px;
+}
+
+.ingredient-left-list .icon-f {
+  margin-left: 58px;
+}
+
+.ingredient-left-list .icon-g {
+  margin-left: 53px;
+}
+
+.ingredient-left-list .icon-h {
+  margin-left: 50px;
+}
+
+/* Section - Recipes */
+.recipe-wrap {
+  background: white;
+  height: 100vh;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.7);
+  /* font-size: 40px; */
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.shopping-wrap * {
+  /* border: 1px solid lightgray; */
+}
+
+.shopping-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.shopping-card {
+  transition: box-shadow 0.3s;
+  padding: 20px;
+}
+
+.shopping-card:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.gone-without-hover {
+  display: grid;
+  visibility: hidden;
+  /* transition: visibility 0.3s; */
+}
+
+.shopping-card:hover .gone-without-hover {
+  visibility: visible;
+}
+.shopping-card-main-title {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  font-weight: 400;
+  color: #127218;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.shopping-card-footer {
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 1fr;
+  height: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.shopping-card-footer-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-card-footer-add-minus-cart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 50px;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.add-minus-cart-minus {
+  cursor: not-allowed;
+}
+
+.add-minus-cart-plus {
+  cursor: not-allowed;
+}
+
+.shopping-card-footer-add-to-cart {
+  cursor: not-allowed;
+  color: white;
+  background: #127218;
+  height: 40px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.price-discount {
+  color: red;
+  text-decoration: line-through;
+}
+
+.shopping-card-main-background {
+  height: 350px;
+  width: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#shop-bottle-background {
+  background-image: url('/img/spruce-bottle.png');
+}
+
+#shop-case-background {
+  background-image: url('/img/spruce-case.png');
+  background-size: 220px;
+}
+
+/* Section - Contact */
+.contact-wrap {
+  background: rgb(32, 32, 32);
+  height: 100vh;
+  padding: 20vh 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.contact-form-outer {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  padding: 2.5rem;
+}
+
+.form-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+.contact-form-outer .form-red {
+  color: red;
+}
+
+#contact-form .form-field {
+  margin: 20px 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form label {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.contact-form-outer input {
+  width: auto;
+  padding-left: 10px;
+  height: 33px;
+  line-height: 35px;
+  font-size: 16px;
+  outline: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+
+.contact-form-outer textarea {
+  width: auto;
+  line-height: 35px;
+  font-size: 16px;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#contactSubmit {
+  background: rgba(18, 114, 24);
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 20px;
+  padding-left: 0px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 300;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#contactSubmit:hover {
+  background: rgb(61, 153, 67);
+}
+
+/* Media Sections */
+
+/* Query for Phones */
+@media screen and (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: white;
+  }
+  html {
+    scroll-snap-type: y none;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Query for Tablets */
+@media screen and (max-width: 1079px) {
 }
