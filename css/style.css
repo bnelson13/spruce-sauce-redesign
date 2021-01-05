@@ -402,18 +402,38 @@ html {
 }
 
 .shopping-wrap * {
-  /* border: 1px solid lightgray; */
+  border: 1px solid rgba(0, 128, 0, 0);
 }
 
 .shopping-wrap {
-  display: flex;
+  display: grid;
   justify-content: space-between;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr 1fr;
   width: 800px;
+}
+
+.sell-sheet {
+  grid-column: 1 / span 2;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  text-align: center;
+}
+
+.sell-sheet a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.sell-sheet a:hover {
+  color: rgba(0, 0, 0);
+  text-decoration: underline;
 }
 
 .shopping-card {
   transition: box-shadow 0.3s;
-  padding: 20px;
+  padding: 20px 50px;
 }
 
 .shopping-card:hover {
@@ -503,6 +523,19 @@ html {
   background-size: 220px;
 }
 
+.out-of-stock {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin: 150px auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: rotate(-25deg);
+}
+
 /* Section - Contact */
 .contact-wrap {
   background: rgb(32, 32, 32);
@@ -564,6 +597,28 @@ html {
   border-radius: 3px;
   padding: 5px 10px;
   background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form-outer .contact-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  margin: 20px;
+}
+
+.contact-form-outer .contact-subtitle-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  margin: 10px 35px;
+}
+
+.contact-form-outer .contact-subtitle-subtitle a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.contact-form-outer .contact-subtitle-subtitle a:hover {
+  color: rgba(255, 255, 255);
+  text-decoration: underline;
 }
 
 #contactSubmit {
