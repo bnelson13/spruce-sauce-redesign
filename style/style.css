@@ -576,17 +576,28 @@
 	padding: 35px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-evenly;
+	overflow: hidden;
+}
+
+.review-header {
+	transition: all 0.5s ease-in-out;
 }
 
 .review-body {
+	transition: all 0.5s ease-in-out;
 	letter-spacing: 0.06em;
 	font-size: 10px;
 	font-weight: 300;
 	line-height: 1.5em;
 }
 
+.review-name {
+	transition: all 0.5s ease-in-out;
+}
+
 .review-title {
+	transition: all 0.5s ease-in-out;
 	font-size: 10px;
 	font-weight: 300;
 }
@@ -694,10 +705,12 @@
 .contact-input-message {
 	width: 295px !important;
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .contact-send {
 	margin: 0 auto;
+	border: none;
 	background-color: var(--light-green);
 	color: white;
 	font-weight: 200;
