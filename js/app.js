@@ -8,6 +8,7 @@ const aboutLink = document.querySelector('#nav-bar-about-li-a');
 const ingredientLink = document.querySelector('#nav-bar-ingredient-li-a');
 const recipeLink = document.querySelector('#nav-bar-recipe-li-a');
 const contactLink = document.querySelector('#nav-bar-contact-li-a');
+const aboutMediaJS = window.matchMedia('(max-width: 1180px)');
 
 // Welcome Section Observer
 
@@ -15,9 +16,14 @@ const welcomeObserver = new IntersectionObserver(
   (entry) => {
     if (entry[0].isIntersecting) {
       spruceBottle.style.opacity = '100';
+      spruceBottle.style.display = 'block';
       //   console.log('Hi Welcome Section');
     } else {
-      //   console.log('Bye Welcome Section');
+      if (aboutMediaJS.matches) {
+        spruceBottle.style.display = 'none';
+      } else {
+        spruceBottle.style.display = 'block';
+      }
     }
   },
   {
@@ -40,25 +46,27 @@ const aboutSubHeaders = document.querySelectorAll('.about-subheader');
 const aboutObserver = new IntersectionObserver(
   (entry) => {
     if (entry[0].isIntersecting) {
-      kiwiDrawing.style.height = '500px';
-      spruceBottle.style.opacity = '100';
-      spruceBottle.style.display = 'block';
-      aboutLink.classList.add('nav-link-dark-border');
-      navBarLinks.forEach((link) => {
-        link.classList.add('nbl-dark');
-        link.classList.remove('nbl-light');
-      });
       setTimeout(() => {
+        kiwiDrawing.style.height = '500px';
+        spruceBottle.style.opacity = '100';
+        if (aboutMediaJS.matches) {
+          spruceBottle.style.display = 'none';
+        } else {
+          spruceBottle.style.display = 'block';
+        }
+        aboutLink.classList.add('nav-link-dark-border');
+        navBarLinks.forEach((link) => {
+          link.classList.add('nbl-dark');
+          link.classList.remove('nbl-light');
+        });
         aboutHR.style.width = '605px';
-      }, 1000);
-      setTimeout(() => {
         aboutSubHeaders.forEach((header) => {
           header.style.opacity = '100';
         });
         aboutSides.forEach((paragraph) => {
           paragraph.style.opacity = '100';
         });
-      }, 2000);
+      }, 500);
     } else {
       kiwiDrawing.style.height = '0px';
       aboutLink.classList.remove('nav-link-dark-border');
@@ -242,7 +250,9 @@ const ingredientPics = [
 ];
 
 const ingredientDescription = document.querySelector('.ingredient-right-text');
-const ingredientBackground = document.querySelector('.ingredient-right-background');
+const ingredientBackground = document.querySelector(
+  '.ingredient-right-background'
+);
 const ingredientBorderList = document.querySelectorAll('.ingredient-icon');
 const ingredientLineList = document.querySelectorAll('.ingredient-line');
 
@@ -265,3 +275,38 @@ for (let i = 0; i < ingredientDesc.length; i++) {
     ingredientDescription.innerHTML = `<h1 class="ingredient-right-text-title">${Ingredients[i]}</h1><p>${ingredientDesc[i]}</p>`;
   };
 }
+
+let bottleMinus = document.querySelector('#bottle-minus');
+let bottleTotal = document.querySelector('#bottle-total');
+let bottlePlus = document.querySelector('#bottle-plus');
+let caseMinus = document.querySelector('#case-minus');
+let caseTotal = document.querySelector('#case-total');
+let casePlus = document.querySelector('#case-plus');
+let bottleTotalAmnt = 0;
+let caseTotalAmnt = 0;
+
+bottleMinus.addEventListener('click', () => {
+  bottleTotalAmnt -= 1;
+  if (bottleTotalAmnt < 0) {
+    bottleTotalAmnt = 0;
+  }
+  bottleTotal.innerHTML = bottleTotalAmnt;
+});
+
+bottlePlus.addEventListener('click', () => {
+  bottleTotalAmnt += 1;
+  bottleTotal.innerHTML = bottleTotalAmnt;
+});
+
+caseMinus.addEventListener('click', () => {
+  caseTotalAmnt -= 1;
+  if (caseTotalAmnt < 0) {
+    caseTotalAmnt = 0;
+  }
+  caseTotal.innerHTML = caseTotalAmnt;
+});
+
+casePlus.addEventListener('click', () => {
+  caseTotalAmnt += 1;
+  caseTotal.innerHTML = caseTotalAmnt;
+});

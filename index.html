@@ -46,7 +46,7 @@
         <hr class="about-section-hr">
         <div class="about-section-trio">
             
-            <div class="about-section-trio-side">
+            <div id='about-section-trio-side-left' class="about-section-trio-side">
                 <h4 class="about-subheader">Health</h4>
                 <p class="about-section-trio-side-p">A Kiwi Jalapeno based hot sauce with no artificial flavors or added sugars. Made with healthy ingredients only.</p>
             </div>
@@ -54,7 +54,7 @@
                 
                 <img id="kiwi-drawing" src="/img/kiwi-drawing.jpg" alt="" />
             </div>
-            <div class="about-section-trio-side">
+            <div id='about-section-trio-side-right' class="about-section-trio-side">
                 <h4 class="about-subheader">Flavor</h4>
                 <p class="about-section-trio-side-p">The recipe has been designed to work with everything, as a topping, as a sauce, in a curry. It is crafted for perfection.</p>
             </div>
@@ -116,8 +116,7 @@
 
       <div id="recipe-section" class="recipe-wrap section-div">
           <div class="shopping-wrap">
-              <div class='sell-sheet' ><a target='_blank' href='/img/Sell-Sheet.pdf'>
-                Product Information</a></div>
+
             
               <div id="shopping-card-original" class="shopping-card">
                   <div class="shopping-card-main">
@@ -130,9 +129,9 @@
                       <div class="shopping-card-footer-price">$7</div>
                       <div class="shopping-card-footer-add-minus-cart gone-without-hover">
                           <div></div>
-                          <div class="add-minus-cart-minus">-</div>
-                          <div class="add-minus-cart-amount">0</div>
-                          <div class="add-minus-cart-plus">+</div>
+                          <div id='bottle-minus' class="add-minus-cart-minus">-</div>
+                          <div id='bottle-total' class="add-minus-cart-amount">0</div>
+                          <div id='bottle-plus' class="add-minus-cart-plus">+</div>
                           <div></div>
                       </div>
                       <div class="shopping-card-footer-add-to-cart gone-without-hover">
@@ -151,15 +150,18 @@
                     <div class="shopping-card-footer-price"><span style="display:none" class='price-discount'>$80</span>&nbsp;$70</div>
                     <div class="shopping-card-footer-add-minus-cart gone-without-hover">
                         <div></div>
-                        <div class="add-minus-cart-minus">-</div>
-                        <div class="add-minus-cart-amount">0</div>
-                        <div class="add-minus-cart-plus">+</div>
+                        <div id='case-minus' class="add-minus-cart-minus">-</div>
+                        <div id='case-total' class="add-minus-cart-amount">0</div>
+                        <div id='case-plus' class="add-minus-cart-plus">+</div>
                         <div></div>
                     </div>
                     <div class="shopping-card-footer-add-to-cart gone-without-hover">
                         Add to Cart
                     </div>
                 </div>
+            </div>
+            <div class='sell-sheet' >
+                <a target='_blank' href='/img/Sell-Sheet.pdf'>Product Information</a>
             </div>
           </div>
       </div>

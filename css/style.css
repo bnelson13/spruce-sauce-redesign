@@ -164,6 +164,7 @@ html {
 
 .about-section-hr {
   width: 0px;
+  display: block;
   /* width: 610px; */
   position: absolute;
   left: 50%;
@@ -217,7 +218,7 @@ html {
   /* position: relative; */
   justify-content: center;
   flex: 1 0;
-  width: 700px;
+  /* width: 700px; */
 }
 
 #kiwi-drawing {
@@ -395,7 +396,6 @@ html {
   align-items: center;
   justify-content: center;
   color: rgba(0, 0, 0, 0.7);
-  /* font-size: 40px; */
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 0.02em;
@@ -408,27 +408,45 @@ html {
 .shopping-wrap {
   display: grid;
   justify-content: space-between;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 1fr 60px;
   grid-template-columns: 1fr 1fr;
   width: 800px;
 }
 
 .sell-sheet {
   grid-column: 1 / span 2;
-  color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sell-sheet * {
+  transition: all 0.4s ease;
 }
 
 .sell-sheet a {
   color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
-  transition: all 0.4s ease;
 }
 
 .sell-sheet a:hover {
   color: rgba(0, 0, 0);
-  text-decoration: underline;
+}
+
+.sell-sheet a::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: white;
+  transition: all 0.4s ease;
+}
+
+.sell-sheet a:hover::after {
+  background: black;
+  transition: all 0.4s ease;
 }
 
 .shopping-card {
@@ -443,7 +461,6 @@ html {
 .gone-without-hover {
   display: grid;
   visibility: hidden;
-  /* transition: visibility 0.3s; */
 }
 
 .shopping-card:hover .gone-without-hover {
@@ -483,11 +500,21 @@ html {
 }
 
 .add-minus-cart-minus {
-  cursor: not-allowed;
+  cursor: pointer;
+}
+
+.add-minus-cart-minus::selection {
+  color: none;
+  background: none;
 }
 
 .add-minus-cart-plus {
-  cursor: not-allowed;
+  cursor: pointer;
+}
+
+.add-minus-cart-plus::selection {
+  color: none;
+  background: none;
 }
 
 .shopping-card-footer-add-to-cart {
@@ -532,7 +559,7 @@ html {
   text-align: center;
   position: relative;
   margin: 150px auto;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(199, 212, 75, 0.7);
   transform: rotate(-25deg);
 }
 
@@ -654,6 +681,48 @@ html {
   }
 }
 
-/* Query for Tablets */
-@media screen and (max-width: 1079px) {
+/* Query for Welcome Page for Tablets */
+@media screen and (max-width: 800px) {
+  #nav-bar-spruce-logo {
+    width: 27px;
+    height: 34px;
+    object-fit: cover;
+    object-position: 0% 50%;
+  }
+}
+
+/* Query for Welcome Page for Tablets */
+@media screen and (max-width: 1180px) {
+  .about-section-hr {
+    display: none;
+  }
+
+  .about-section-trio-side {
+    position: absolute;
+    width: 500px;
+    transform: translateY(310px);
+  }
+
+  .about-section-trio-side-p {
+    max-width: 414px;
+    padding: 15px;
+    line-height: 26px;
+  }
+
+  .about-subheader {
+    transform: translateY(-80px);
+    color: white;
+    text-shadow: 0px 0px 10px #127218, 0px 0px 8px #127218, 0px 0px 6px #127218
+}
+  }
+
+  #about-section-trio-side-left {
+    transform: translateY(90px);
+  }
+
+  .about-section-tagline {
+      width: 700px;
+      bottom: 10%;
+  }
+
 }
