@@ -144,9 +144,30 @@ const reviewTitle = document.querySelector('.review-title');
 const reviewButtonLeft = document.querySelector('.review-button-left');
 const reviewButtonRight = document.querySelector('.review-button-right');
 const reviewData = [
-	{ id: 0, header: 'Awesome!', body: 'This sauce is really good', name: 'Mary', title: 'Engineer' },
-	{ id: 1, header: 'Bad!', body: 'Wow, I put it on everything', name: 'Brad', title: 'Owner' },
-	{ id: 2, header: 'Crate!', body: "I can't wait for the next flavor", name: 'Tommy', title: 'Traveler' },
+	{
+		id: 0,
+		header: 'This sauce is incredible!',
+		body:
+			'This sauce is really good, I put it on just about everything and goes great with all of it. We put it on Mexican, Chinese, Breakfast, Shrimp, Pasta, etc and it makes the food taste better with totally changing the flavor. Love it!',
+		name: 'Sylvia K.',
+		title: 'Pastry Chef',
+	},
+	{
+		id: 1,
+		header: 'Very good and very unique',
+		body:
+			'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+		name: 'Jamaal W.',
+		title: 'Hotel Manager',
+	},
+	{
+		id: 2,
+		header: 'My family cannot keep it stocked',
+		body:
+			'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+		name: 'Henry S.',
+		title: 'Web Developer',
+	},
 ];
 
 //	<div class="review-header"> Amazing Sauce!
