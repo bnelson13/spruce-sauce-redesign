@@ -150,7 +150,7 @@ const reviewData = [
 		body:
 			'This sauce is really good, I put it on just about everything and goes great with all of it. We put it on Mexican, Chinese, Breakfast, Shrimp, Pasta, etc and it makes the food taste better with totally changing the flavor. Love it!',
 		name: 'Sylvia K.',
-		title: 'Pastry Chef',
+		title: 'Pastry Chef, Chicago',
 	},
 	{
 		id: 1,
@@ -158,7 +158,7 @@ const reviewData = [
 		body:
 			'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
 		name: 'Jamaal W.',
-		title: 'Hotel Manager',
+		title: 'Hotel Manager, Denver',
 	},
 	{
 		id: 2,
@@ -166,7 +166,7 @@ const reviewData = [
 		body:
 			'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
 		name: 'Henry S.',
-		title: 'Web Developer',
+		title: 'Web Developer, San Francisco',
 	},
 ];
 
